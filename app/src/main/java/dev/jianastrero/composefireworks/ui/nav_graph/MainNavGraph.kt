@@ -12,11 +12,13 @@ import dev.jianastrero.composefireworks.ui.screen.MainScreen
 import dev.jianastrero.composefireworks.ui.theme.ComposeFireworksTheme
 
 fun NavGraphBuilder.mainNavGraph(
-    onNavigate: (Screens) -> Unit
+    onBack: () -> Unit,
+    onNavigate: (Screens) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     // Main
     composable(Screens.Main.route) {
-        ComposeFireworksTheme(modifier = Modifier.fillMaxSize()) {
+        ComposeFireworksTheme(modifier = modifier) {
             MainScreen(
                 onNavigate = onNavigate,
                 modifier = Modifier
@@ -28,6 +30,11 @@ fun NavGraphBuilder.mainNavGraph(
 
     // Firework Designer
     composable(Screens.FireworkDesigner.route) {
-        FireworkDesignerScreen(modifier = Modifier.fillMaxSize())
+        ComposeFireworksTheme(modifier = modifier) {
+            FireworkDesignerScreen(
+                onBack = onBack,
+                modifier = Modifier.fillMaxSize()
+            )
+        }
     }
 }
