@@ -17,6 +17,10 @@ fun App(modifier: Modifier = Modifier) {
         startDestination = Screens.Main.route,
         modifier = modifier
     ) {
-        mainNavGraph()
+        mainNavGraph(
+            onNavigate = { screen ->
+                navController.navigate(screen.route)
+            }
+        )
     }
 }
