@@ -1,5 +1,6 @@
 package dev.jianastrero.composefireworks.ui.screen
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import dev.jianastrero.composefireworks.ui.enumeration.Screens
 import dev.jianastrero.composefireworks.ui.theme.Blue200
 import dev.jianastrero.composefireworks.ui.theme.Pink200
+import dev.jianastrero.composefireworks.ui.theme.Pink400
 import dev.jianastrero.composefireworks.ui.theme.Pink50
 
 @Composable
@@ -36,6 +39,7 @@ fun MainScreen(
                 onNavigate(Screens.FireworkDesigner)
             },
             elevation = ButtonDefaults.elevatedButtonElevation(16.dp),
+            shape = MaterialTheme.shapes.small,
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(

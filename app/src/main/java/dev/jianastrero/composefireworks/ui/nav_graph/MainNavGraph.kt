@@ -9,18 +9,21 @@ import androidx.navigation.compose.composable
 import dev.jianastrero.composefireworks.ui.enumeration.Screens
 import dev.jianastrero.composefireworks.ui.screen.FireworkDesignerScreen
 import dev.jianastrero.composefireworks.ui.screen.MainScreen
+import dev.jianastrero.composefireworks.ui.theme.ComposeFireworksTheme
 
 fun NavGraphBuilder.mainNavGraph(
     onNavigate: (Screens) -> Unit
 ) {
     // Main
     composable(Screens.Main.route) {
-        MainScreen(
-            onNavigate = onNavigate,
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(12.dp)
-        )
+        ComposeFireworksTheme(modifier = Modifier.fillMaxSize()) {
+            MainScreen(
+                onNavigate = onNavigate,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(12.dp)
+            )
+        }
     }
 
     // Firework Designer

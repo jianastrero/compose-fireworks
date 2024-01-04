@@ -17,9 +17,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeFireworksTheme(modifier = Modifier.fillMaxSize()) {
-                App(modifier = Modifier.fillMaxSize())
-            }
+            App(modifier = Modifier.fillMaxSize())
         }
     }
 }
