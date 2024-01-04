@@ -80,7 +80,7 @@ fun FireworkDesignerScreen(
     showSystemUi = true,
 )
 @Composable
-fun FireworkDesignerScreenPreview() {
+private fun FireworkDesignerScreenPreview() {
     ComposeFireworksTheme(modifier = Modifier.fillMaxSize()) {
         FireworkDesignerScreen(
             onBack = {},
