@@ -16,3 +16,11 @@ val Pink50 = Color(0xFFF9E3F3)
 val Pink200 = Color(0xFFec87ce)
 val Pink400 = Color(0xFFEB00A5)
 val Pink700 = Color(0xFFC50082)
+
+val Red500 = Color(0xFFEF4444)
+
+val Orange300 = Color(0xFFFDBA74)
+val Orange500 = Color(0xFFF97316)
+
+val Yellow300 = Color(0xFFFDE047)
+val Yellow400 = Color(0xFFFACC15)

@@ -5,27 +5,20 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import dev.jianastrero.composefireworks.model.ExplosionShape
 import dev.jianastrero.composefireworks.model.FireworkExplosion
-import dev.jianastrero.composefireworks.ui.theme.Blue50
-import dev.jianastrero.composefireworks.ui.theme.Blue500
 
 @Composable
 fun Firework(
@@ -91,50 +84,24 @@ private fun ContentDrawScope.drawExplosion(explosion: Pair<FireworkExplosion, St
 
     for (i in 0 until 360 step (360 / fireworkExplosion.arms)) {
         rotate(i.toFloat() + fireworkExplosion.shift) {
-            drawLine(
-                color = newColor,
-                start = head,
-                end = tail,
-                strokeWidth = 2.dp.toPx(),
-                cap = Stroke.DefaultCap
-            )
+            when (fireworkExplosion.shape) {
+                ExplosionShape.Line -> {
+                    drawLine(
+                        color = newColor,
+                        start = head,
+                        end = tail,
+                        strokeWidth = 2.dp.toPx(),
+                        cap = Stroke.DefaultCap
+                    )
+                }
+                is ExplosionShape.Circle -> {
+                    drawCircle(
+                        color = newColor,
+                        radius = fireworkExplosion.shape.radius,
+                        center = tail
+                    )
+                }
+            }
         }
-    }
-}
-
-@Preview(
-    device = Devices.PIXEL_4_XL,
-    name = "Firework",
-    showBackground = true,
-    showSystemUi = true,
-)
-@Composable
-private fun FireworkPreview() {
-    Box(modifier = Modifier.fillMaxSize()) {
-        Firework(
-            explosions = arrayOf(
-                FireworkExplosion(
-                    duration = 1_000,
-                    arms = 8
-                ),
-                FireworkExplosion(
-                    arms = 24,
-                    color = Blue500,
-                    delay = 300,
-                    duration = 700,
-                    rotation = 45f,
-                    shift = 45f
-                ),
-                FireworkExplosion(
-                    delay = 600,
-                    duration = 400,
-                    arms = 8
-                ),
-            ),
-            modifier = Modifier
-                .align(Alignment.Center)
-                .size(128.dp)
-                .border(2.dp, Blue50)
-        )
     }
 }
