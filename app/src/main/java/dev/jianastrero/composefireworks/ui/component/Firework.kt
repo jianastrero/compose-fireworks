@@ -24,7 +24,6 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.jianastrero.composefireworks.model.FireworkExplosion
-import dev.jianastrero.composefireworks.model.getLength
 import dev.jianastrero.composefireworks.ui.theme.Blue50
 import dev.jianastrero.composefireworks.ui.theme.Blue500
 
@@ -115,15 +114,21 @@ private fun FireworkPreview() {
         Firework(
             explosions = arrayOf(
                 FireworkExplosion(
-                    delay = 400,
-                    duration = 600,
+                    duration = 1_000,
                     arms = 8
                 ),
                 FireworkExplosion(
-                    arms = 12,
+                    arms = 24,
+                    color = Blue500,
+                    delay = 300,
+                    duration = 700,
                     rotation = 45f,
-                    duration = 1_000,
                     shift = 45f
+                ),
+                FireworkExplosion(
+                    delay = 600,
+                    duration = 400,
+                    arms = 8
                 ),
             ),
             modifier = Modifier

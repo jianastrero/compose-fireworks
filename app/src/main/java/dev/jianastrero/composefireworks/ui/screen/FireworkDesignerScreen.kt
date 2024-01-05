@@ -26,7 +26,9 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.jianastrero.composefireworks.R
+import dev.jianastrero.composefireworks.model.FireworkExplosion
 import dev.jianastrero.composefireworks.ui.component.Firework
+import dev.jianastrero.composefireworks.ui.theme.Blue500
 import dev.jianastrero.composefireworks.ui.theme.ComposeFireworksTheme
 import dev.jianastrero.composefireworks.ui.theme.Pink200
 import dev.jianastrero.composefireworks.unsplash.Unsplash
@@ -76,6 +78,25 @@ fun FireworkDesignerScreen(
         )
 
         Firework(
+            explosions = arrayOf(
+                FireworkExplosion(
+                    duration = 1_000,
+                    arms = 8
+                ),
+                FireworkExplosion(
+                    arms = 24,
+                    color = Blue500,
+                    delay = 300,
+                    duration = 700,
+                    rotation = 45f,
+                    shift = 45f
+                ),
+                FireworkExplosion(
+                    delay = 600,
+                    duration = 400,
+                    arms = 8
+                ),
+            ),
             modifier = Modifier
                 .align(Alignment.Center)
                 .size(128.dp)
