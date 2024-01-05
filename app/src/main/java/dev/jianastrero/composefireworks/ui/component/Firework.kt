@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.drawscope.ContentDrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.unit.dp
+import dev.jianastrero.composefireworks.ext.drawStar
 import dev.jianastrero.composefireworks.model.ExplosionShape
 import dev.jianastrero.composefireworks.model.FireworkExplosion
 
@@ -98,6 +99,13 @@ private fun ContentDrawScope.drawExplosion(explosion: Pair<FireworkExplosion, St
                     drawCircle(
                         color = newColor,
                         radius = fireworkExplosion.shape.radius,
+                        center = tail
+                    )
+                }
+                is ExplosionShape.Star -> {
+                    drawStar(
+                        color = newColor,
+                        size = fireworkExplosion.shape.size,
                         center = tail
                     )
                 }

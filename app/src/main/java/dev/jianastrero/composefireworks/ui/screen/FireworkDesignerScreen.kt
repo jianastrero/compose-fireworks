@@ -95,8 +95,15 @@ private fun FireworkSample(modifier: Modifier = Modifier) {
         explosions = arrayOf(
             FireworkExplosion(
                 arms = 8,
+                color = Yellow400,
+                duration = 800,
+                 shape = ExplosionShape.Star(with(density) { 12.dp.toPx() }),
+            ),
+            FireworkExplosion(
+                arms = 8,
                 color = Orange500,
-                duration = 1_000,
+                delay = 200,
+                duration = 800,
             ),
             FireworkExplosion(
                 arms = 20,

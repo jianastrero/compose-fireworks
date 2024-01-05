@@ -6,4 +6,6 @@ sealed class ExplosionShape {
 
     data class Circle(val radius: Float) : ExplosionShape()
 
+    data class Star(val size: Float) : ExplosionShape()
+
 }
