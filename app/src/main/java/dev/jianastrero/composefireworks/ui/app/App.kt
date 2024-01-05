@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import dev.jianastrero.composefireworks.ui.enumeration.Screens
+import dev.jianastrero.composefireworks.enumeration.Screens
 import dev.jianastrero.composefireworks.ui.nav_graph.mainNavGraph
 
 

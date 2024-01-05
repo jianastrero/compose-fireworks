@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
@@ -25,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.jianastrero.composefireworks.R
+import dev.jianastrero.composefireworks.ui.component.Firework
 import dev.jianastrero.composefireworks.ui.theme.ComposeFireworksTheme
 import dev.jianastrero.composefireworks.ui.theme.Pink200
 import dev.jianastrero.composefireworks.unsplash.Unsplash
@@ -39,7 +41,9 @@ fun FireworkDesignerScreen(
     val context = LocalContext.current
     val backgroundPainter = painterResource(id = R.drawable.skyline)
 
-    Box(modifier = Modifier.background(Pink200).then(modifier)) {
+    Box(modifier = Modifier
+        .background(Pink200)
+        .then(modifier)) {
         Image(
             painter = backgroundPainter,
             contentDescription = null,
@@ -69,6 +73,12 @@ fun FireworkDesignerScreen(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(8.dp)
+        )
+
+        Firework(
+            modifier = Modifier
+                .align(Alignment.Center)
+                .size(128.dp)
         )
     }
 }

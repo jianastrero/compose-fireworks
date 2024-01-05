@@ -1,4 +1,4 @@
-package dev.jianastrero.composefireworks.ui.enumeration
+package dev.jianastrero.composefireworks.enumeration
 
 enum class Screens(val route: String) {
     Main("main"),

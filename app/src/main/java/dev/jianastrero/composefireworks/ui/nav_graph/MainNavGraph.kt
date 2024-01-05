@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import dev.jianastrero.composefireworks.ui.enumeration.Screens
+import dev.jianastrero.composefireworks.enumeration.Screens
 import dev.jianastrero.composefireworks.ui.screen.FireworkDesignerScreen
 import dev.jianastrero.composefireworks.ui.screen.MainScreen
 import dev.jianastrero.composefireworks.ui.theme.ComposeFireworksTheme

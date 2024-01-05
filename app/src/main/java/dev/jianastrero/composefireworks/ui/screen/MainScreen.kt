@@ -16,7 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
-import dev.jianastrero.composefireworks.ui.enumeration.Screens
+import dev.jianastrero.composefireworks.enumeration.Screens
 import dev.jianastrero.composefireworks.ui.theme.Blue200
 import dev.jianastrero.composefireworks.ui.theme.Pink200
 import dev.jianastrero.composefireworks.ui.theme.Pink400
